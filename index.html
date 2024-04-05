@@ -346,23 +346,30 @@
 .menus{
   display: block;
 }
-input{
-  visibility: hidden;
-  display: block;
-}
-.menu :checked ~ .links{
-  display: block;
-}
 .links{
-        width: 150px;
+        width: 19rem;
     height: 248px;
-    background: blue;
-    color: white;
+    background: white;
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 160px;
+    top: 12rem;
+    right: 3rem;
     display: block;
+    border: 1px solid black;
+      }
+      .links a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1.4rem;
+        
+      }
+      input :checked ~ .menu{
+        transition: 0.5s;
+      }
+      #menus:checked ~ .links{
+        transition: 0.5s;
       }
 }
 
@@ -381,7 +388,7 @@ input{
       <div class="logo">
         <img src="images/logo.svg" alt="">
       </div>
-      <div class="links">
+      <div class="links" id="click">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
@@ -394,20 +401,24 @@ input{
     </div>
   </nav>
 
-  <head>
+  <header>
     <div class="flex-1">
       <div class="text-1">
         <h1>Next generation <br>digital banking</h1>
+        <main>
         <p> Take your financial life online. Your Easybank account will be a one-stop-shop
           for spending, saving, budgeting, investing, and much more.</p>
+        </main>
         <button class="btn">Request Invite</button>
       </div>
+      <main>
       <div class="mobile">
-        <img src="images/bg-intro-desktop.svg" class="backright">
+        <img src="images/bg-intro-desktop.svg" class="backright" alt="">
         <img src="images/image-mockups.png" alt="">
       </div>
+      </main>
     </div>
-  </head>
+  </header>
   <section>
     <div class="text-2">
       <h1>
@@ -513,10 +524,12 @@ input{
       </div>
     </div>
   </footer>
+  <footer>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  </footer>
 </body>
 
 </html>

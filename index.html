@@ -266,6 +266,7 @@
     .menus{
       display: none;
     }
+    
 
     @media (width < 600px) {
       .button{
@@ -345,8 +346,10 @@
 }
 .menus{
   display: block;
+    position: absolute;
+    top: 34px;
 }
-.links{
+.active{
         width: 19rem;
     height: 248px;
     background: white;
@@ -357,19 +360,13 @@
     right: 3rem;
     display: block;
     border: 1px solid black;
+    transition: .5s;
       }
       .links a{
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 1.4rem;
-        
-      }
-      input :checked ~ .menu{
-        transition: 0.5s;
-      }
-      #menus:checked ~ .links{
-        transition: 0.5s;
       }
 }
 
@@ -388,7 +385,7 @@
       <div class="logo">
         <img src="images/logo.svg" alt="">
       </div>
-      <div class="links" id="click">
+      <div class="links" id="good">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
@@ -530,6 +527,13 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>
   </footer>
+  <script>
+       const hamb = document.querySelector("#menu");
+    const mobile = document.querySelector("#good");
+    hamb.addEventListener("click", function(){
+        mobile.classList.toggle("active");
+    });
+  </script>
 </body>
 
 </html>
